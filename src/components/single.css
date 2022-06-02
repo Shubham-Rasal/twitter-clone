@@ -1,0 +1,37 @@
+.single-tweet{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    flex: 1;
+    height: 200px;
+    background-color:rgb(109, 109, 109);
+    margin:2rem;
+    border-radius: 20px;
+    width:80%;
+}
+.tweet-data-container{
+    height: 200px;
+    width:50vw;
+    flex-direction: row;
+}
+.like,.retweet{
+
+    height:100px;
+
+}
+.interactions{
+    align-items: center;
+    align-content: center;
+    margin:10px;
+    /* background-color: rgb(255, 255, 255); */
+    display:flex;
+    flex:2;
+    justify-content: space-between;
+    width:50vw;
+}
+
+.load-not{
+     visibility:hidden;
+
+}
