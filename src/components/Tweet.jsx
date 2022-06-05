@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Spinner, InputGroup, FormControl } from 'react-bootstrap'
 import  GlobalContext  from './context'
+import '../app.css'
 
 import Button from 'react-bootstrap/Button'
 import context from 'react-bootstrap/esm/AccordionContext'
@@ -50,21 +51,24 @@ const Tweet = () => {
     <div>
       <div>
 
-        {loading ?
+        {
+              loading ?
 
           <Spinner animation="border" variant="primary" /> :
-          <div className="tweet">
-            <InputGroup className="mb-1" type="text" name="tweet" id="tweet" onChange={handleChange} >
-
+          <div className="tweet ">
+            <InputGroup className="mb-5 h-5" type="text" name="tweet" id="tweet" onChange={handleChange} >
+{/* 
               <FormControl
                 placeholder="Tweet"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
-              />
+              /> */}
+              <textarea    rows="3"></textarea>
             </InputGroup>
 
             <Button variant='outline-primary' onClick={handleSubmit} >Tweet</Button>
-          </div>}
+          </div>
+          }
 
       </div>
 
