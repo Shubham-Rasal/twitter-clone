@@ -10,12 +10,19 @@ function App() {
     <div>
       <ContextProvider>
         <div className="app-container">
-          
-        <div className="new-tweet">
+          <div className="navbar-container">
+            Navbar
+          </div>
+          <div className="main">
 
-        <Tweet />
-        </div>
-        <Feed />
+            <div className="new-tweet">
+              <Tweet />
+            </div>
+            <div className="feed-container">
+              <Feed />
+
+            </div>
+          </div>
         </div>
       </ContextProvider>
 

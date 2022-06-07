@@ -1,49 +1,26 @@
 .app-container{
-    /* margin-top: 2vh; */
-    padding:10px;
-
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction:column;
-    background-color: black;
+    width: 100vw;
+    display: flex;
+    
+    flex-direction: row;
+    flex: 1;
+    
+    background-color:black;
     height: 100vh;
+    color: white;
 }
-
-
 
 .new-tweet{
-    background-color:rgb(121, 119, 119);
-    width:50vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius:20px;
+    background-color:red;
 
 
 }
-.new-tweet>input{
-    background-color:rgb(255, 124, 124);
-}
+
 
 .tweet{
-    background-color:rgb(158, 97, 97);
+    background-color:gray; 
+    
+    width: 40vw;
+    height: 100%;
     padding:10px;
-    margin:1rem;
-    border-radius: 5px;
-    width: 50vw;
-}
-.input-group>.form-control{
-    background-color:rgb(199, 139, 255);
-    height:100px;
-    width:30vw;            
-}
-
-textarea{
-    resize: none;
-    width: 100%;
-  height: 150px;
-  border:none;
-  outline:none;
-  border-radius: 10px;
 }
