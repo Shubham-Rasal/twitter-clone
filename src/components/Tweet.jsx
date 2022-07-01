@@ -59,7 +59,7 @@ const Tweet = () => {
             <InputGroup className="mb-5 h-5" type="text" name="tweet" id="tweet" onChange={handleChange} >
 
               <FormControl
-                placeholder="Tweet"
+                placeholder="Wjat's on your mind?"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
               />

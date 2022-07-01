@@ -10,9 +10,37 @@
     color: white;
 }
 
-.new-tweet{
-    background-color:red;
+.navbar-container{
+    width: 15%;
+    height: 100px;
+    background-color: rgb(33, 26, 26);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.main{
+    /* margin: 1rem; */
+    padding: 1rem;
+    display:flex;
+    width:100vw;
+    align-items: center;
+    /* justify-content: center;  */
+    flex-direction: column;
+    background-color:rgb(20, 20, 20);
+}
+
+.follow-recommend{
+    display: flex;
+    width:20%;
+    /* margin:    1rem 0 0 0; */
+    padding:  0 0  0 1rem;
+    background-color: rgb(12, 30, 53);
+}
+
+.new-tweet{
+    background-color:rgb(78, 17, 17);
 
 }
 

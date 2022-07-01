@@ -27,10 +27,10 @@ function App() {
   return (
     <div>
       <ContextProvider>
-      { isAuthenticated ? (
-        <div>
-          <div>
-            <img src={user?.profilePictureUrl} alt={user?.name}/>
+      {/* { isAuthenticated ? ( */}
+        {/* <div> */}
+          {/* <div> */}
+            {/* <img src={user?.profilePictureUrl} alt={user?.name}/>
           </div>
           <div>
             <span>Logged in as: {user?.name}</span>
@@ -45,8 +45,8 @@ function App() {
       ) : (
         <div>
           <button onClick={() => loginWithRedirect()}>Click me to login</button>
-        </div>
-      )}
+        </div> */}
+      {/* )} */}
         <div className="app-container">
           <div className="navbar-container">
             Navbar
@@ -61,7 +61,10 @@ function App() {
 
             </div>
           </div>
-          <button onClick={handleClick}>Settings</button>
+            <div className="follow-recommend">
+              who to follow
+            </div>
+          {/* <button onClick={handleClick}>Settings</button> */}
 
         </div>
       </ContextProvider>
