@@ -1,3 +1,9 @@
+body{
+  background-color:#15202b;
+
+}
+
+
 .app-container{
     width: 100vw;
     display: flex;
@@ -5,50 +11,58 @@
     flex-direction: row;
     flex: 1;
     
-    background-color:rgb(33, 26, 26);
+    background-color:#15202b;
     height: 100vh;
     color: white;
 }
 
 .navbar-container{
-    width: 15%;
-    height: 100px;
-    background-color: rgb(33, 26, 26);
+    width: 20vw ;
+    height: 100vh;
+    background-color: #15202b;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    border-right: 1px #34475af0 solid;
 }
 
 .main{
     /* margin: 1rem; */
-    padding: 1rem;
+    /* padding: 1rem; */
     display:flex;
     width:100vw;
     align-items: center;
     /* justify-content: center;  */
     flex-direction: column;
-    background-color:rgb(20, 20, 20);
+    background-color:#15202b;
 }
 
-.follow-recommend{
+.right-side{
     display: flex;
-    width:20%;
+    width:40vw;
     /* margin:    1rem 0 0 0; */
     padding:  0 0  0 1rem;
-    background-color: rgb(12, 30, 53);
+    background-color: #15202b;
+    border-left: 1px #34475af0 solid;
 }
 
 .new-tweet{
-    background-color:rgb(78, 17, 17);
+    background-color:#15202b;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    border: 1px #34475af0 solid;
+
 
 }
 
 
 .tweet{
-    background-color:rgb(101, 101, 101); 
+    background-color:#15202b; 
     
-    width: 40vw;
+    width: 60vw;
     height: 100%;
-    padding:10px;
+    /* padding:10px; */
 }

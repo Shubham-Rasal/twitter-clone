@@ -61,9 +61,19 @@ function App() {
 
             </div>
           </div>
+
+          <div className="right-side">
+          <div className="whats-happening">
+            <h3>What's happening</h3>
+          </div>
             <div className="follow-recommend">
               who to follow
             </div>
+
+          </div>
+         
+              
+            
           {/* <button onClick={handleClick}>Settings</button> */}
 
         </div>

@@ -56,17 +56,19 @@ const Tweet = () => {
 
           <Spinner animation="border" variant="primary" /> :
           <div className="tweet ">
-            <InputGroup className="mb-5 h-5" type="text" name="tweet" id="tweet" onChange={handleChange} >
+            <InputGroup className="mb-5 h-5 p-1" type="text" name="tweet" id="tweet" onChange={handleChange} >
 
               <FormControl
-                placeholder="Wjat's on your mind?"
+                placeholder="What's on your mind?"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
               />
               
             </InputGroup>
+             <div className="tweet-btn container p-3">
 
             <Button variant='primary' onClick={handleSubmit} >Tweet</Button>
+             </div>
           </div>
           }
 
