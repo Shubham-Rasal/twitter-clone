@@ -8,7 +8,16 @@ tweet:{
     required: true,
     min:6,
     max:100,
+},
+user:{
+    type:String,
+    required: true,
+},
+like:{
+   type:Number,
+   default:0,    
 }
+
 
 
 });

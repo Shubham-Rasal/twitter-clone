@@ -1,34 +1,36 @@
 .single-tweet{
-    display: flex;
-    align-items: center;
-    align-content: center;
-    flex-direction: column;
-    flex: 1;
-    height: 200px;
-    background-color:rgb(109, 109, 109);
-    margin:2rem;
-    border-radius: 20px;
-    width:80%;
+    width: 62vw;
+    height:30vh;
+    background-color:wheat;
+    
+   
 }
 .tweet-data-container{
-    height: 200px;
-    width:50vw;
-    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left:5rem;
+ 
 }
 .like,.retweet{
 
-    height:100px;
+    padding:1rem;
+    margin:0.2rem;
+
+    
 
 }
 .interactions{
+    display: flex;
+    height: 3rem;
+    background-color:rgb(95, 122, 95);
     align-items: center;
-    align-content: center;
-    margin:10px;
-    /* background-color: rgb(255, 255, 255); */
-    display:flex;
-    flex:2;
-    justify-content: space-between;
-    width:50vw;
+    justify-content: stretch;
+    margin-left:5rem;
+
+
+  
 }
 
 .load-not{
