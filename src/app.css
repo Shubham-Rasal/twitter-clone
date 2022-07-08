@@ -3,6 +3,11 @@ body{
 
 }
 
+.logo{
+
+    filter: invert(94%) sepia(0%) saturate(7483%) hue-rotate(69deg) brightness(107%) contrast(100%);
+}
+
 
 .app-container{
     width: 100vw;
@@ -73,3 +78,14 @@ img{
     width: 50px;
     border-radius: 50%;
 }
+
+.logo{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: white;
+
+}
+
+
+
