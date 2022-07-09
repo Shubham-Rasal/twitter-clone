@@ -1,0 +1,52 @@
+.logo {
+    height: 47px;
+    width: 47px;
+    border-radius: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    padding: 8px;
+    /* color:white; */
+    background-color: #15202b;
+   
+}
+.logo>svg{
+    filter: invert(94%) sepia(0%) saturate(7483%) hue-rotate(69deg) brightness(107%) contrast(100%);
+   
+
+}
+
+
+.logo:hover{
+    /* filter: invert(94%) sepia(0%) saturate(7483%) hue-rotate(69deg) brightness(107%) contrast(100%); */
+
+    background-color: #ffffff1a;
+    cursor: pointer;
+    
+}
+
+
+
+
+.navbar-icons {
+
+    height: 70vh;
+    width: 50px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+
+    background-color: #15202b;
+}
+
+.tweet-icon{
+    background-color: #1d9bf0;
+}
+
+
+.tweet-icon:hover{
+    background-color: hwb(204 32% 7%);
+    
+
+}

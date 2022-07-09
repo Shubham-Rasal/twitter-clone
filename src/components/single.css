@@ -1,7 +1,7 @@
 .single-tweet{
     width: 62vw;
     height:30vh;
-    background-color:wheat;
+    background-color:#15202b;
     
    
 }
@@ -24,13 +24,11 @@
 .interactions{
     display: flex;
     height: 3rem;
-    background-color:rgb(95, 122, 95);
+    background-color:#15202b;
     align-items: center;
     justify-content: stretch;
     margin-left:5rem;
 
-
-  
 }
 
 .load-not{

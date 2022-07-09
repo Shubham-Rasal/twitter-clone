@@ -3,7 +3,7 @@ import Tweet from './components/Tweet'
 import Feed from './components/Feed'
 import { ContextProvider } from './components/context'
 import './app.css'
-import { HomeIcon, Logo, MessagesIcon, ProfileIcon, TweetIcon } from './components/Logo'
+import { ExploreIcon, HomeIcon, Logo, MessagesIcon, ProfileIcon, TweetIcon } from './components/Logo'
 
 import { ContextHolder } from '@frontegg/rest-api';
 import { useAuth, useLoginWithRedirect } from "@frontegg/react";
@@ -46,11 +46,15 @@ function App() {
           
           
           <div className="navbar-container">
+            
           <Logo/>
+          <div className="navbar-icons">
            <HomeIcon/>
+           <ExploreIcon/>
            <MessagesIcon/>
            <ProfileIcon/>
            <TweetIcon/>
+           </div>
           </div>
 
           <div className="main">
@@ -83,7 +87,7 @@ function App() {
 
           <div className="right-side">
             <div className="whats-happening">
-              <h3>What's happening</h3>
+              <h1>What's happening</h1>
             </div>
             <div className="follow-recommend">
               who to follow
