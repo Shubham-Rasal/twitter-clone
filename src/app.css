@@ -25,10 +25,9 @@ body{
     width: 20vw ;
     height: 100vh;
     background-color: #15202b;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
     border-right: 1px #34475af0 solid;
 }
 
@@ -80,10 +79,10 @@ img{
 }
 
 .logo{
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
-    color: white;
+    display: flex;
 
 }
 
