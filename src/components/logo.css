@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 5px;
+    margin: 10px;
     padding: 8px;
     /* color:white; */
     background-color: #15202b;
@@ -36,6 +36,7 @@
     display: flex;
     align-items: flex-end;
     flex-direction: column;
+    
 
     background-color: #15202b;
 }
@@ -49,4 +50,8 @@
     background-color: hwb(204 32% 7%);
     
 
+}
+
+.account{
+    margin: 10px;
 }

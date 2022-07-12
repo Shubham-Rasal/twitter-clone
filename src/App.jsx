@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Tweet from './components/Tweet'
 import Feed from './components/Feed'
+import Account from './components/Account'
 import { ContextProvider } from './components/context'
 import './app.css'
 import { ExploreIcon, HomeIcon, Logo, MessagesIcon, ProfileIcon, TweetIcon } from './components/Logo'
@@ -48,12 +49,14 @@ function App() {
           <div className="navbar-container">
             
           <Logo/>
+          
           <div className="navbar-icons">
            <HomeIcon/>
            <ExploreIcon/>
            <MessagesIcon/>
            <ProfileIcon/>
            <TweetIcon/>
+           <Account profile={user}/>
            </div>
           </div>
 
@@ -62,15 +65,11 @@ function App() {
             <div className="new-tweet">
               {isAuthenticated ? (
                 <div>
-                  <div>
-                    <img src={user?.profilePictureUrl} alt={user?.name} />
-                  </div>
+                 
                   <div>
                     <span>Logged in as: {user?.name}</span>
                   </div>
-                  <div>
-                    <button onClick={() => alert(user.accessToken)}>What is my access token?</button>
-                  </div>
+                  
                 </div>
               ) : (
                 <div>
@@ -86,10 +85,13 @@ function App() {
           </div>
 
           <div className="right-side">
-            <div className="whats-happening">
-              <h1>What's happening</h1>
+            <div className="search-bar">
+              <input type="text" placeholder=' 🔎 Search Twitter' />
             </div>
-            <div className="follow-recommend">
+            <div className="whats-happening">
+              <h4>What's happening</h4>
+            </div>
+            <div className="who-to-follow">
               who to follow
             </div>
 
