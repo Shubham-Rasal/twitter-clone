@@ -25,6 +25,7 @@ export function ContextProvider({ children }) {
             body: JSON.stringify({ skip, limit }),
         });
         const tweets = await res.json();
+        console.log(tweets);
         
         
         console.log(tweets);
@@ -36,6 +37,7 @@ export function ContextProvider({ children }) {
         }
         setSkip(skip+limit+1);
         setFeed(feed => [...feed, tweets]);
+        console.log(feed);
         setLoading(false);
 
     }

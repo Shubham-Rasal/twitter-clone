@@ -8,7 +8,7 @@ import context from 'react-bootstrap/esm/AccordionContext'
 
 
 const Tweet = () => {
-  const [tweetData, setTweet] = useState("Tweet empty");
+  const [tweetData, setTweet] = useState("");
   const [loading, setLoading] = useState(false);
 
   const { getTweets , skip ,setSkip} = useContext(GlobalContext);
@@ -37,6 +37,7 @@ const Tweet = () => {
  
     
       setLoading(false);
+      setTweet("");
      
 
   };
@@ -67,7 +68,7 @@ const Tweet = () => {
             </InputGroup>
              <div className="tweet-btn container p-3">
 
-            <Button variant='primary' onClick={handleSubmit} >Tweet</Button>
+            <Button variant='primary' disabled={tweetData.length===0} onClick={handleSubmit} >Tweet</Button>
              </div>
           </div>
           }

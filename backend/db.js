@@ -11,7 +11,7 @@ tweet:{
 },
 user:{
     type:String,
-    required: true,
+    
 },
 like:{
    type:Number,
@@ -23,4 +23,4 @@ like:{
 });
 
 
-module.exports=mongoose.model("Users",TweetSchema);
+module.exports=mongoose.model("Tweets",TweetSchema);

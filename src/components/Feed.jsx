@@ -56,30 +56,13 @@ const Feed = () => {
 
           feed.map(tweets => (
             tweets.map(tweet => (
-              <Single data={tweet.tweet} key={tweet._id} />
+              <Single data={tweet} key={tweet._id} />
             ))
 
           ))
 
         }
-        <div className='single-tweet '>
-
-          <div className="tweet-data-container">
-            <h3>/heloo</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-               Obcaecati laboriosam nesciunt, quaerat modi vel dolorum iure! Sit placeat quibusdam mollitia deserunt.
-               Placeat aliquid impedit debitis et quasi adipisci laboriosam accusamus!</p>
-          </div>
-          <div className="interactions md-2 ">
-
-            <div className="like">
-              <Button variant='outline-info'>👍</Button>
-            </div>
-            <div className="retweet">
-              <Button variant='success'> ♻</Button>
-            </div>
-          </div>
-        </div>
+        
 
       </div>
 
