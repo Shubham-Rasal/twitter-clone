@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
-const { MongoClient } = require("mongodb");
+const { MongoClient, ObjectId } = require("mongodb");
 // const mongoose = require('mongoose');
 
 const Tweet = require('./db');
@@ -42,7 +42,10 @@ app.post('/tweet', async (req, res) => {
 
     const tweet = new Tweet({
 
-        tweet: req.body.tweetData
+        tweet: req.body.tweetData,
+        user: "shubham",
+        like: 2,
+        
     });
     console.log(tweet);
     addTweet(tweet);
@@ -65,7 +68,7 @@ app.post('/feed', async (req, res) => {
         const left = total - skip;
         console.log(left)
 
-        if(left>2){
+        if(left>0){
 
             collection.find({}).sort({_id:-1}).skip(skip).limit(limit).toArray(function (err, result) {
                 if (err)
@@ -83,3 +86,37 @@ app.post('/feed', async (req, res) => {
     allTweets();
 
 });
+
+
+app.post('/like', async (req, res) => {
+    
+        console.log(req.body);
+    
+        const {tweetId} = await  req.body;
+        console.log(tweetId);
+    
+       
+            const db = await client.db("Tweets");
+            const collection = await db.collection("Tweets");
+            const p = await collection.updateOne({ _id:ObjectId(tweetId) }, { $inc: { like: 1 } });
+            console.log(p)
+            res.json("Request received.");
+        
+    
+    }
+    );
+
+    app.post('/retweet', async (req, res) => {
+        console.log(req.body);
+        const {tweetId} = req.body;
+        console.log(tweetId);
+        async function retweetTweet() {
+            const db = await client.db("Tweets");
+            const collection = await db.collection("Tweets");
+            const p = await collection.updateOne({ _id: tweetId }, { $inc: { retweets: 1 } });
+            console.log(p)
+            res.json("Request received.");
+        }
+        retweetTweet();
+    }
+    );

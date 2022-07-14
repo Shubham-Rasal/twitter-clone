@@ -75,6 +75,16 @@ body{
     align-items: center;
     justify-content:center;
     /* border: 1px #34475af0 solid; */
+   
+    overflow-x: hidden;
+    /* overflow-y:hidden; */
+    overflow:scroll;
+    
+
+}
+
+.feed-container::-webkit-scrollbar{
+    display: none;
 
 }
 

@@ -57,6 +57,9 @@ function App() {
            <ProfileIcon/>
            <TweetIcon/>
            <Account profile={user}/>
+           <div className="logout">
+              <button onClick={logout}>Logout</button>
+           </div>
            </div>
           </div>
 
@@ -94,6 +97,8 @@ function App() {
             <div className="who-to-follow">
               who to follow
             </div>
+
+
 
           </div>
 
