@@ -29,6 +29,7 @@ export function ContextProvider({ children }) {
         
         
         console.log(tweets);
+        
         if (tweets === "Tweets finished!") {
             console.log("end");
             setLoading(false);
