@@ -1,11 +1,12 @@
 .single-tweet{
     width: 50vw;
-    height:30vh;
+    height:auto;
     background-color:#15202b;
     
    
 }
 .tweet-data-container{
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,18 +16,43 @@
 }
 .like,.retweet{
 
-    padding:1rem;
-    margin:0.2rem;
+    /* background-color:#6b7c8d; */
+    height: 35px;
+    display:flex;
+    color:#9aa7b5;
+    padding :1rem;
+    align-items: center;
 
     
 
 }
+
+.like:hover{
+    
+    color:#f91880;
+   
+}
+
+.like:hover svg{
+    fill:#f91880;
+    background-color:rgba(249, 24, 128, 0.1);
+    
+
+    
+}
+
+
 .interactions{
     display: flex;
-    height: 3rem;
+    height: 32px;
+    width:90%;
     background-color:#15202b;
+    
+     /* background-color:#6b7c8d; */
     align-items: center;
-    justify-content: stretch;
+    /* justify-content: space-evenly;
+     */
+     
     margin-left:5rem;
 
 }

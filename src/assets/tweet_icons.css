@@ -1,0 +1,10 @@
+.like-icon>svg , .retweet-icon>svg{
+    width: 26px;
+    height: 26px;
+    
+   fill:#9aa7b5;
+   padding:3px;
+   margin:3px;
+    border-radius:50%;
+   
+}

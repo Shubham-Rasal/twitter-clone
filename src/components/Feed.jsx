@@ -47,8 +47,9 @@ const Feed = () => {
 
 
   return (
-    <div>
-      <h1>Latest Tweets </h1>
+    <>
+      
+          <Single />
 
       <div className="feed">
 
@@ -74,7 +75,7 @@ const Feed = () => {
         </div>
       }
 
-    </div>
+    </>
   )
 }
 
