@@ -33,6 +33,7 @@ async function addTweet(Tweet) {
     const collection = await db.collection("Tweets");
     const p = await collection.insertOne(Tweet);
     console.log(p)
+
 }
 
 
