@@ -36,8 +36,6 @@ async function addTweet(Tweet) {
 
 }
 
-
-
 app.post('/tweet', async (req, res) => {
     console.log(req.body);
 

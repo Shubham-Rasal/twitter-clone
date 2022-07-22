@@ -10,10 +10,14 @@ const Single = props => {
   const [like, setLike] = useState(0);
   const [retweet, setRetweet] = useState(0);
 
-  console.log(props);
-
+  console.log(props.data?.like);
+  // const likes = props.data?.like;
+  // setLike(likes);
 
   async function  handleLike()  {
+
+
+    setLike(like + 1);
     const options = {
       method: 'POST',
       headers: {
@@ -42,25 +46,30 @@ const Single = props => {
     <div className='single-tweet'>
       
          <div className="tweet-data-container">
-             <h3>{props?.data?.tweet}
-             Loredsjfhksdfhksfhkd
-             fskdfhksdfhkdsjfhkdhfkd</h3>
+          <h5>
+
+            {props?.data?.tweet}
+          </h5>
+           
         
          </div>
          <div className="interactions">
            
          <div className="like">
+          <button  onClick={handleLike}>
+
           <Like_Icon />
+          </button>
           {like}
           
        
-           {/* <Button variant='outline-info' onClick={handleLike}>Like</Button> */}
+           
          </div>
          <div className="retweet">
           <Retweet_Icon />
           {retweet}
           
-           {/* <Button variant='success'> Retweet</Button> */}
+           <Button variant='success'> Retweet</Button>
          </div>
          </div>
     </div>
