@@ -26,8 +26,10 @@ export function ContextProvider({ children }) {
         });
         const tweets = await res.json();
         console.log(tweets);
-      
-            
+
+        
+        console.log(tweets);
+        
         if (tweets === "Tweets finished!") {
             console.log("end");
             setLoading(false);

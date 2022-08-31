@@ -10,6 +10,9 @@ const Single = props => {
   const [like, setLike] = useState(0);
   const [retweet, setRetweet] = useState(0);
 
+
+  console.log(props);
+
   console.log(props.data?.like);
   // const likes = props.data?.like;
   // setLike(likes);
@@ -51,7 +54,9 @@ const Single = props => {
             {props?.data?.tweet}
           </h5>
            
-        
+             <h3>{props?.data?.tweet}
+             Loredsjfhksdfhksfhkd
+             fskdfhksdfhkdsjfhkdhfkd</h3>
          </div>
          <div className="interactions">
            
@@ -64,12 +69,18 @@ const Single = props => {
           
        
            
+          <Like_Icon />
+          {like}
+          
+       
+           {/* <Button variant='outline-info' onClick={handleLike}>Like</Button> */}
          </div>
          <div className="retweet">
           <Retweet_Icon />
           {retweet}
           
            <Button variant='success'> Retweet</Button>
+           {/* <Button variant='success'> Retweet</Button> */}
          </div>
          </div>
     </div>
