@@ -5,7 +5,7 @@ import Account from './components/Account'
 import { ContextProvider } from './components/context'
 import './app.css'
 import { ExploreIcon, HomeIcon, Logo, MessagesIcon, ProfileIcon, TweetIcon } from './components/Logo'
-
+import { Button } from 'react-bootstrap'
 import { ContextHolder } from '@frontegg/rest-api';
 import { useAuth, useLoginWithRedirect } from "@frontegg/react";
 import { AdminPortal } from '@frontegg/react'
@@ -44,23 +44,23 @@ function App() {
 
 
         <div className="app-container">
-          
-          
+
+
           <div className="navbar-container">
-            
-          <Logo/>
-          
-          <div className="navbar-icons">
-           <HomeIcon/>
-           <ExploreIcon/>
-           <MessagesIcon/>
-           <ProfileIcon/>
-           <TweetIcon/>
-           <Account profile={user}/>
-           <div className="logout">
-              <button onClick={logout}>Logout</button>
-           </div>
-           </div>
+
+            <Logo />
+
+            <div className="navbar-icons">
+              <HomeIcon />
+              <ExploreIcon />
+              <MessagesIcon />
+              <ProfileIcon />
+              <TweetIcon />
+              <Account profile={user} />
+              <div className="logout">
+                <button onClick={logout}>Logout</button>
+              </div>
+            </div>
           </div>
 
           <div className="main">
@@ -68,23 +68,27 @@ function App() {
             <div className="new-tweet">
               {isAuthenticated ? (
                 <div>
-                 
+
                   <div>
                     <span>Logged in as: {user?.name}</span>
+                    <Tweet />
                   </div>
-                  
+                  <div className="feed-container">
+                    <Feed />
+                  </div>
+
                 </div>
               ) : (
                 <div>
-                  <button onClick={() => loginWithRedirect()}>Click me to login</button>
+                  <Button variant="primary" onClick={()=>loginWithRedirect()}>
+                    Login
+                  </Button>
+                  {/* <button onClick={() => loginWithRedirect()}>Click me to login</button> */}
                 </div>
-              )}
-              <Tweet />
-            </div>
-            <div className="feed-container">
-              <Feed />
 
+              )}
             </div>
+
           </div>
 
           <div className="right-side">
@@ -97,9 +101,6 @@ function App() {
             <div className="who-to-follow">
               who to follow
             </div>
-
-
-
           </div>
 
         </div>

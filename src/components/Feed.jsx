@@ -48,10 +48,13 @@ const Feed = () => {
 
   return (
     <>
-      
-          <Single />
+
+
 
       <div className="feed">
+        <Single />
+        <Single />
+        <Single />
 
         {
 
@@ -63,7 +66,7 @@ const Feed = () => {
           ))
 
         }
-        
+
 
       </div>
 

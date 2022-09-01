@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { Button } from 'react-bootstrap';
 import './single.css'
 import { Like_Icon,Retweet_Icon } from '../assets/tweet_icons';
@@ -9,11 +9,24 @@ const Single = props => {
   // const { tweet, likes, retweets } = data;
   const [like, setLike] = useState(0);
   const [retweet, setRetweet] = useState(0);
+  const [qoute, setQoute] = useState("");
+  //declare anonymous function
+   async function getQuote() {
+    const data = await fetch('https://animechan.vercel.app/api/random')
+    const json = await data.json()
+    let test = await json.quote;
+    console.log(test) 
+    setQoute(test) 
+        
+}
 
+
+useEffect(() => {
+  getQuote()  
+}, [])
 
   console.log(props);
 
-  console.log(props.data?.like);
   // const likes = props.data?.like;
   // setLike(likes);
 
@@ -50,37 +63,33 @@ const Single = props => {
       
          <div className="tweet-data-container">
           <h5>
-
-            {props?.data?.tweet}
+              {props?.data?.tweet}
           </h5>
-           
+                   
              <h3>{props?.data?.tweet}
-             Loredsjfhksdfhksfhkd
-             fskdfhksdfhkdsjfhkdhfkd</h3>
+            <p>{qoute}</p>
+             
+            
+            </h3>
          </div>
          <div className="interactions">
            
          <div className="like">
           <button  onClick={handleLike}>
-
-          <Like_Icon />
+          <Like_Icon  />
           </button>
-          {like}
-          
+          {like}       
        
            
-          <Like_Icon />
-          {like}
-          
+                   
        
            {/* <Button variant='outline-info' onClick={handleLike}>Like</Button> */}
          </div>
          <div className="retweet">
-          <Retweet_Icon />
           {retweet}
+          <Retweet_Icon />
           
-           <Button variant='success'> Retweet</Button>
-           {/* <Button variant='success'> Retweet</Button> */}
+           <Button variant='success' onClick={()=>getQuote()}> Retweet</Button>
          </div>
          </div>
     </div>

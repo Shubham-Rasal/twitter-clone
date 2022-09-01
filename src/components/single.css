@@ -1,7 +1,12 @@
 .single-tweet{
-    width: 50vw;
-    height:auto;
-    background-color:#15202b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 50vh;
+    background-color:#7a8a9b;
     
    
 }
@@ -26,6 +31,11 @@
     
 
 }
+.like>button{
+    border: none;
+    background-color: transparent;
+    
+}
 
 .like:hover{
     
@@ -44,16 +54,14 @@
 
 .interactions{
     display: flex;
-    height: 32px;
-    width:90%;
-    background-color:#15202b;
+   margin-top: auto;
+    height: 100px;
+    width:100%;
+    background-color:#710886;
     
-     /* background-color:#6b7c8d; */
     align-items: center;
-    /* justify-content: space-evenly;
-     */
+  
      
-    margin-left:5rem;
 
 }
 
