@@ -65,13 +65,14 @@ function App() {
 
           <div className="main">
 
-            <div className="new-tweet">
               {isAuthenticated ? (
                 <div>
 
                   <div>
                     <span>Logged in as: {user?.name}</span>
+                  <div className="new-tweet">
                     <Tweet />
+                  </div>
                   </div>
                   <div className="feed-container">
                     <Feed />
@@ -87,7 +88,6 @@ function App() {
                 </div>
 
               )}
-            </div>
 
           </div>
 

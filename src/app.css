@@ -43,13 +43,12 @@ body {
 
     display: flex;
     width: 50vw;
-    height:90vh;
+    height:100%;
     align-items: center;
     justify-content: center;
     align-content: center;
     flex-direction: column;
     background-color: #642727;
-    
 }
 
 .right-side {
@@ -75,16 +74,17 @@ body {
 .feed-container {
     background-color: #939393;
     width: 50vw;
-    height: 65vh;
+    height: 69vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /* border: 1px #34475af0 solid; */
+    border: 1px #34475af0 solid;
 
 
 
     overflow-y: scroll;
+    overflow-x: hidden;
     
     
 
