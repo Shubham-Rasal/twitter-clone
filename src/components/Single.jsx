@@ -61,16 +61,12 @@ useEffect(() => {
   return (
     <div className='single-tweet'>
       
-         <div className="tweet-data-container">
-          <h5>
-              {props?.data?.tweet}
-          </h5>
-                   
-             <h3>{props?.data?.tweet}
+         <div className="tweet-data-container">                         
+             
             <p>{qoute}</p>
              
             
-            </h3>
+           
          </div>
          <div className="interactions">
            

@@ -24,7 +24,7 @@ body {
     flex-direction: row;
     flex: 1;
 
-    background-color: #2a76c2;
+    background-color:  #15202b;
     height: 100%;
     color: white;
 }
@@ -42,13 +42,13 @@ body {
 .main {
 
     display: flex;
-    width: 50vw;
+   min-width: 512px;
     height:100%;
     align-items: center;
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    background-color: #642727;
+    background-color: #15202b;
 }
 
 .right-side {
@@ -61,24 +61,20 @@ body {
 
 .new-tweet {
     background-color: #15202b;
-    width: 50vw;
+    min-width: 512px;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border: 1px #34475af0 solid; */
+    border: 1px #34475af0 solid;
 
 
 }
 
 
 .feed-container {
-    background-color: #939393;
-    width: 50vw;
-    height: 69vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    background-color: #15202b;
+    min-width: 512px;
+    height: 69vh;    
     border: 1px #34475af0 solid;
 
 
@@ -143,4 +139,11 @@ body {
     border-style: none;
     background-color: #1e2732;
 
+}
+
+@media  screen and (max-width:1024px)  {
+    .right-side {
+        visibility: hidden;
+    }
+    
 }
