@@ -74,6 +74,7 @@ body {
 .feed-container {
     background-color: #15202b;
     min-width: 512px;
+    max-width: 512px;
     height: 69vh;    
     border: 1px #34475af0 solid;
 
@@ -146,4 +147,40 @@ body {
         visibility: hidden;
     }
     
+}
+
+@media screen and (max-width:840px){
+    .app-container {
+        flex-direction: column;
+    }
+    .navbar-container {
+        width: 100vw;
+        height: 10vh;
+        transform: rotate(90deg);
+        /* bottom: 0; */
+        /* position: fixed; */
+
+        border-right: none;
+        border-bottom: 1px #34475af0 solid;
+    }
+    .navbar-icons>div {
+        transform: rotate(-90deg);
+    }
+    .main {
+        width: 100vw;
+        height: 100vh;
+        border: none;
+    }
+    .feed-container {
+        width: 100vw;
+        height: 100vh;
+        border: none;
+    }
+    /* .new-tweet {
+        width: 100vw;
+        height: 100vh;
+        border: none;
+    } */
+   
+      
 }
