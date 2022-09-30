@@ -85,7 +85,7 @@ useEffect(() => {
           {retweet}
           <Retweet_Icon />
           
-           <Button variant='success' onClick={()=>getQuote()}> Retweet</Button>
+           {/* <Button variant='success' onClick={()=>getQuote()}> Retweet</Button> */}
          </div>
          </div>
     </div>

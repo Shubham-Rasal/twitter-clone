@@ -22,8 +22,8 @@
     justify-content: center;
     flex-direction: column; */
     margin-left:5rem;
-    background-color:rgb(55, 66, 60);
-    color:rgb(50, 37, 37);
+    background-color:#15202b;
+    color:rgb(219, 219, 219);
     padding:4px;
     margin-right: 10px;
     margin-bottom: 10px;
@@ -35,10 +35,10 @@
     /* background-color:#6b7c8d; */
     height: 10%;
     display:flex;
-    color:#9aa7b5;
+    color:#ffffff;
     padding :1rem;
     align-items: center;
-    background-color:rgb(55, 66, 60);
+    background-color:#15202b;
 
     
 
@@ -69,7 +69,7 @@
    margin-top: auto;
     height: 35px;
     width:100%;
-    background-color: #2980d7;
+    background-color: #15202b;
     
     align-items: center;
   

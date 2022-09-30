@@ -70,13 +70,13 @@ const Feed = () => {
 
       </div>
 
-      {loading ?
+      {/* {loading ? */}
 
-        <Spinner animation="border" variant="primary" /> :
+       {/* <Spinner animation="border" variant="primary" /> : */}
         <div className="load-more">
           <Button className={customClass} variant="danger " onClick={loadMore}>Load More... </Button>
         </div>
-      }
+      {/* } */}
 
     </>
   )

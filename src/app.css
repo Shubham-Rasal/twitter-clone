@@ -24,7 +24,7 @@ body {
     flex-direction: row;
     flex: 1;
 
-    background-color:  #15202b;
+    background-color: #15202b;
     height: 100%;
     color: white;
 }
@@ -42,8 +42,8 @@ body {
 .main {
 
     display: flex;
-   min-width: 512px;
-    height:100%;
+    min-width: 560px;
+    height: 100%;
     align-items: center;
     justify-content: center;
     align-content: center;
@@ -53,7 +53,7 @@ body {
 
 .right-side {
     display: flex;
-    width: 40vw;
+    width: 30vw;
     padding: 0 0 0 1rem;
     background-color: #15202b;
     border-left: 1px #34475af0 solid;
@@ -74,16 +74,16 @@ body {
 .feed-container {
     background-color: #15202b;
     min-width: 512px;
-    max-width: 512px;
-    height: 69vh;    
+    max-width: 612px;
+    height: 69vh;
     border: 1px #34475af0 solid;
 
 
 
     overflow-y: scroll;
     overflow-x: hidden;
-    
-    
+
+
 
 
 
@@ -142,17 +142,18 @@ body {
 
 }
 
-@media  screen and (max-width:1024px)  {
+@media screen and (max-width:1024px) {
     .right-side {
         visibility: hidden;
     }
-    
+
 }
 
-@media screen and (max-width:840px){
+@media screen and (max-width:840px) {
     .app-container {
         flex-direction: column;
     }
+
     .navbar-container {
         width: 100vw;
         height: 10vh;
@@ -163,24 +164,28 @@ body {
         border-right: none;
         border-bottom: 1px #34475af0 solid;
     }
+
     .navbar-icons>div {
         transform: rotate(-90deg);
     }
+
     .main {
         width: 100vw;
         height: 100vh;
         border: none;
     }
+
     .feed-container {
         width: 100vw;
         height: 100vh;
         border: none;
     }
+
     /* .new-tweet {
         width: 100vw;
         height: 100vh;
         border: none;
     } */
-   
-      
+
+
 }
