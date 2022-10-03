@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
 import { Button, Spinner } from 'react-bootstrap';
 import Single from './Single';
-import GlobalContext from './context'
 
 import './single.css'
 
@@ -12,74 +11,67 @@ import './single.css'
 const Feed = () => {
 
 
-  const [customClass, setCustomClass] = useState("load");
 
 
-  const { getTweets, feed, loading } = useContext(GlobalContext);
-  // console.log(getTweets)
 
 
-  const isMounted = useRef();
+  async function getTweets() {
 
+    const options = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    const response = await fetch(`http://localhost:5000/feed`, options);
+    const data = await response.json();
+    console.log(data);
 
-  function loadMore() {
-    // console.log(feed)
-    if (!loading) {
-
-      getTweets();
-      console.log("call from loadMore")
-      // skip = skip + limit + 1;
-      // console.log(skip);
-
-    }
   }
 
-  useEffect(() => {
-    if (isMounted == true) return;
-
-    isMounted.current = true;
-
-    getTweets();
-    console.log("call from here");
-  }, []);
 
 
 
 
-  return (
-    <>
+const [customClass, setCustomClass] = useState("load");
+const [tweets, setTweets] = useState([]);
 
 
 
-      <div className="feed">
-        <Single />
-        <Single />
-        <Single />
-
-        {
-
-          feed.map(tweets => (
-            tweets.map(tweet => (
-              <Single data={tweet} key={tweet._id} />
-            ))
-
-          ))
-
-        }
 
 
-      </div>
+useEffect( () => {
 
-      {/* {loading ? */}
+  (async ()=>{
 
-       {/* <Spinner animation="border" variant="primary" /> : */}
-        <div className="load-more">
-          <Button className={customClass} variant="danger " onClick={loadMore}>Load More... </Button>
-        </div>
-      {/* } */}
+    
+      const data = await getTweets();
+      console.log(data)
+      setTweets(data);
+  })()
 
-    </>
-  )
+
+}, []);
+
+
+
+
+return (
+  <>
+
+
+
+    <div className="feed">
+      <Single />
+      <Single />
+      <Single />
+
+    </div>
+
+
+
+  </>
+)
 }
 
 export default Feed

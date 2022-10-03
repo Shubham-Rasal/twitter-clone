@@ -1,17 +1,14 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Spinner, InputGroup, FormControl } from 'react-bootstrap'
-import  GlobalContext  from './context'
 import '../app.css'
 
 import Button from 'react-bootstrap/Button'
-import context from 'react-bootstrap/esm/AccordionContext'
 
 
 const Tweet = () => {
   const [tweetData, setTweet] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const { getTweets , skip ,setSkip} = useContext(GlobalContext);
 
 
   function handleChange(e) {
@@ -41,13 +38,7 @@ const Tweet = () => {
      
 
   };
-  useEffect(() => {
-    console.log(skip);
-    setSkip(0);
-    getTweets();
-  
-  }, [loading])
-
+ 
   return (
     <div>
       <div>

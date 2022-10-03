@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import Tweet from './components/Tweet'
 import Feed from './components/Feed'
 import Account from './components/Account'
-import { ContextProvider } from './components/context'
 import './app.css'
 import { ExploreIcon, HomeIcon, Logo, MessagesIcon, ProfileIcon, TweetIcon } from './components/Logo'
 import { Button } from 'react-bootstrap'
@@ -40,7 +39,6 @@ function App() {
 
 
     <div>
-      <ContextProvider>
 
 
         <div className="app-container">
@@ -56,20 +54,19 @@ function App() {
               <MessagesIcon />
               <ProfileIcon />
               <TweetIcon />
-              <Account profile={user} />
+              {/* <Account profile={user} />
               <div className="logout">
                 <button onClick={logout}>Logout</button>
-              </div>
+              </div> */}
             </div>
           </div>
 
           <div className="main">
 
-              {isAuthenticated ? (
                 <div>
 
                   <div>
-                    <span>Logged in as: {user?.name}</span>
+                   
                   <div className="new-tweet">
                     <Tweet />
                   </div>
@@ -79,15 +76,7 @@ function App() {
                   </div>
 
                 </div>
-              ) : (
-                <div>
-                  <Button variant="primary" onClick={()=>loginWithRedirect()}>
-                    Login
-                  </Button>
-                  {/* <button onClick={() => loginWithRedirect()}>Click me to login</button> */}
-                </div>
-
-              )}
+              
 
           </div>
 
@@ -107,7 +96,6 @@ function App() {
 
 
 
-      </ContextProvider>
 
     </div>
 

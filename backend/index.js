@@ -1,7 +1,18 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
+const fetch = require('node-fetch');
 const { MongoClient, ObjectId } = require("mongodb");
+
+const {TwitterApi} = require('twitter-api-v2');
+
+const client = new TwitterApi({
+    appKey: 'Zhh1LFU5KtvNFtKdwpaq0Qea3',
+    appSecret: 'ZULL1zFAQEMSK6nV8pZ6VyS5Bu9rV3bSrNmfytQOZvnHPQOVw9',
+    accessToken: '1533393427190394880-C6AQUPGa7FWndjzBHTlMJEjnJQMPx7',
+    accessSecret: 'Dok7FVu02sefGTRASlm9Wuz63ODOvzlT8aPdMAYTvz0xL',
+});
+
 // const mongoose = require('mongoose');
 
 const Tweet = require('./db');
@@ -15,107 +26,89 @@ app.use(express.json({ limit: '1mb' }));
 
 const dbURL = "mongodb+srv://shubham:shubham123@forms-pro.g4unt.mongodb.net/?retryWrites=true&w=majority";
 
-const client = new MongoClient(dbURL, { useNewUrlParser: true });
 
-async function Connect() {
 
-    // Connect to the MongoDB cluster
-    await client.connect();
-    console.log("Connected to db");
 
-}
+// app.post('/tweet', async (req, res) => {
+//     console.log(req.body);
 
-Connect();
+//     const tweet = new Tweet({
 
-async function addTweet(Tweet) {
-
-    const db = await client.db("Tweets");
-    const collection = await db.collection("Tweets");
-    const p = await collection.insertOne(Tweet);
-    console.log(p)
-
-}
-
-app.post('/tweet', async (req, res) => {
-    console.log(req.body);
-
-    const tweet = new Tweet({
-
-        tweet: req.body.tweetData,
-        user: "shubham",
-        like: 2,
+//         tweet: req.body.tweetData,
+//         user: "shubham",
+//         like: 2,
         
-    });
-    console.log(tweet);
-    addTweet(tweet);
-    res.json("Request received.");
-});
+//     });
+//     console.log(tweet);
+//     addTweet(tweet);
+//     res.json("Request received.");
+// });
 
-app.post('/feed', async (req, res) => {
+app.get('/feed', async (req, res) => {
 
-    console.log(req.body);
+    
+        let people = ['elonmusk','nasa','javascript','india']
+          let feed = [];
+       
+    
+        const BEARER_TOKEN = 'AAAAAAAAAAAAAAAAAAAAANAShwEAAAAAqkE9wZLbjW7dmDPafrAMX6frA8A%3DdCpBIOcMMr401vu9uDE74vfpxCgJUOhTeNY074URbWbUiIW5zj'
+        
+         
+        const url = `https://api.twitter.com/2/tweets/search/recent?query=`
+        let params = {
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + BEARER_TOKEN,
+            }
+        }
 
-   const {skip = 0 , limit = 10} = req.body;
-     
+        people.forEach(async person =>{
 
-    async function allTweets() {
+            
+            const twitResult = await fetch(url+person, params)
+            const data = await  twitResult.json();
+            console.log('twitter:')
+            feed.push(data)
+        },)
+
+
    
-        const db = await client.db("Tweets");
-        const collection = await db.collection("Tweets");
-        const total = await collection.countDocuments();
-        console.log(total);
-        const left = total - skip;
-        console.log(left)
-
-        if(left>0){
-
-            collection.find({}).sort({_id:-1}).skip(skip).limit(limit).toArray(function (err, result) {
-                if (err)
-                console.error(err)
-                
-                res.json(result)
-            })
-        }
-        else{
-            res.json("Tweets finished!");
-        }
-    
-    }
-
-    allTweets();
+    res.json({message:'success',
+        data:feed,
+})
 
 });
 
 
-app.post('/like', async (req, res) => {
+// app.post('/like', async (req, res) => {
     
-        console.log(req.body);
+//         console.log(req.body);
     
-        const {tweetId} = await  req.body;
-        console.log(tweetId);
+//         const {tweetId} = await  req.body;
+//         console.log(tweetId);
     
        
-            const db = await client.db("Tweets");
-            const collection = await db.collection("Tweets");
-            const p = await collection.updateOne({ _id:ObjectId(tweetId) }, { $inc: { like: 1 } });
-            console.log(p)
-            res.json("Request received.");
+//             const db = await client.db("Tweets");
+//             const collection = await db.collection("Tweets");
+//             const p = await collection.updateOne({ _id:ObjectId(tweetId) }, { $inc: { like: 1 } });
+//             console.log(p)
+//             res.json("Request received.");
         
     
-    }
-    );
+//     }
+//     );
 
-    app.post('/retweet', async (req, res) => {
-        console.log(req.body);
-        const {tweetId} = req.body;
-        console.log(tweetId);
-        async function retweetTweet() {
-            const db = await client.db("Tweets");
-            const collection = await db.collection("Tweets");
-            const p = await collection.updateOne({ _id: tweetId }, { $inc: { retweets: 1 } });
-            console.log(p)
-            res.json("Request received.");
-        }
-        retweetTweet();
-    }
-    );
+//     app.post('/retweet', async (req, res) => {
+//         console.log(req.body);
+//         const {tweetId} = req.body;
+//         console.log(tweetId);
+//         async function retweetTweet() {
+//             const db = await client.db("Tweets");
+//             const collection = await db.collection("Tweets");
+//             const p = await collection.updateOne({ _id: tweetId }, { $inc: { retweets: 1 } });
+//             console.log(p)
+//             res.json("Request received.");
+//         }
+//         retweetTweet();
+//     }
+//     );
